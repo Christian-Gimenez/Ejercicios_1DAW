@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="bookstore" type="tcBookstore">
+    </xs:element>
+
+    <!-- Tipos simples-->
+    <xs:simpleType name="tCategory">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Science Fiction"/>
+            <xs:enumeration value="Mystery"/>
+            <xs:enumeration value="Romance"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tPrice">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcBookstore">
+        <xs:group ref="gBookstore"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcBook">
+        <xs:group ref="gBook"/>
+        <xs:attribute name="category" type="tCategory"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gBookstore">
+        <xs:sequence>
+            <xs:element name="book" type="tcBook" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gBook">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="author" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="price" type="tPrice" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="./libro-tut.xsd">
+    <libro disponible="true">
+        <titulo>the Elements</titulo>
+        <fechaPubli>2000-11-24</fechaPubli>
+        <ref>23-TE</ref>
+        <precio>12.45</precio>
+    </libro>  
+
+    <libro disponible="true">
+        <titulo>Alquimia</titulo>
+        <fechaPubli>1988-01-02</fechaPubli>
+        <ref>13-Al</ref>
+        <precio>25.24</precio>
+    </libro> 
+
+    <libro disponible="false">
+        <titulo>El Médico</titulo>
+        <fechaPubli>2007-07-30</fechaPubli>
+        <ref>09-EM</ref>
+        <precio divisa="€">30.12</precio>
+    </libro> 
+    
+</libros>

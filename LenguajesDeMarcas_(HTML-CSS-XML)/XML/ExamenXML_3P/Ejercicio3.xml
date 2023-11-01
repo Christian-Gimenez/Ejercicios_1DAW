@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Christian Miguel Giménez Puerma 1ºDAW-->
+<examen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Ejercicio3.xsd">
+    <persona>
+        <nombre>Juan Pardo</nombre>
+        <nacimiento dia="10" mes="Abril" anyo="1982" />
+        <direccion>
+            <calle>Caoba, 1</calle>
+            <poblacion>Madrid</poblacion>
+            <provincia>Madrid</provincia>
+            <cpostal>28005</cpostal>
+        </direccion>
+        <varon />
+    </persona>
+
+    <persona>
+
+        <nombre>Maria Lopez</nombre>
+        <direccion>
+            <calle>Avda. Roncato 1</calle>
+            <poblacion>Illescas</poblacion>
+            <provincia>Toledo</provincia>
+            <cpostal>45200</cpostal>
+        </direccion>
+        <direccion>
+            <calle>Paseo de la Esperanza 15, 1ºA</calle>
+            <poblacion>Madrid</poblacion>
+            <provincia>Madrid</provincia>
+            <cpostal>28031</cpostal>
+        </direccion>
+        <hembra />
+    </persona>
+</examen>

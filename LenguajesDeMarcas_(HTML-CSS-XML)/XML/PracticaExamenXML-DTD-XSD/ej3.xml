@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE biblioteca SYSTEM "ej3.dtd">-->
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="ej3.xsd">
+    <libro isbn="1234X">
+        <titulo>Indomable</titulo>
+        <autor>La Ducha Fria</autor>
+        <añoPublicacion>2021</añoPublicacion>
+        <genero>Filosofía</genero>
+        <genero>Psicología</genero>
+    </libro>
+
+    <libro isbn="9821Z">
+        <titulo>Asertividad</titulo>
+        <autor>Olga</autor>
+        <añoPublicacion>2018</añoPublicacion>
+        <genero>Psicología</genero>
+    </libro>
+
+    <libro isbn="1131K">
+        <titulo>1000 Fabulas para Programadores</titulo>
+        <autor>Kiko Palomares</autor>
+        <añoPublicacion>2022</añoPublicacion>
+        <genero>Ciencia</genero>
+    </libro>
+
+    <libro isbn="7560S">
+        <titulo>El Señor De Los Anillos</titulo>
+        <autor>J.R.R. Tolkien</autor>
+        <añoPublicacion>1959</añoPublicacion>
+        <genero>Fantasía</genero>
+        <genero>Novela</genero>
+    </libro>
+
+    <lector dni="06024747H">
+        <nombre>Laura Moreno</nombre>
+        <email>laurm@mail.com</email>
+        <prestamo>
+            <ejemplar isbn="7560S" />
+            <fecha inicio="2022-08-29" fin="2022-09-15"/>
+        </prestamo>
+    </lector>
+
+    <lector dni="52017340X">
+        <nombre>Cristian Jimenez</nombre>
+        <email>cristian@mail.com</email>
+        <prestamo>
+            <ejemplar isbn="1234X" />
+            <fecha inicio="2023-04-01"/>
+        </prestamo>
+
+        <prestamo>
+            <ejemplar isbn="9821Z" />
+            <fecha inicio="2023-03-28" fin="2023-04-09"/>
+        </prestamo>
+    </lector>
+
+    <lector dni="92847156P">
+        <nombre>Maria Carmen</nombre>
+        <email>mcarmen@mail.com</email>
+    </lector>
+</biblioteca>

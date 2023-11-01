@@ -1,0 +1,7 @@
+<!ELEMENT employees (employee+)>
+<!ELEMENT employee (name+, age+, department+, salary+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT age ANY>
+<!ELEMENT department ANY>
+<!ELEMENT salary ANY>
+<!ATTLIST employee id NMTOKEN #REQUIRED>

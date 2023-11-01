@@ -1,0 +1,104 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="examen" type="tcExamen">
+    </xs:element>
+
+    <!-- Tipos Simples -->
+    <xs:simpleType name="tDia">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="31" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tMes">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Enero" />
+            <xs:enumeration value="Febrero" />
+            <xs:enumeration value="Marzo" />
+            <xs:enumeration value="Abril" />
+            <xs:enumeration value="Mayo" />
+            <xs:enumeration value="Junio" />
+            <xs:enumeration value="Julio" />
+            <xs:enumeration value="Agosto" />
+            <xs:enumeration value="Septiembre" />
+            <xs:enumeration value="Octubre" />
+            <xs:enumeration value="Noviembre" />
+            <xs:enumeration value="Diciembre" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tAnyo">
+    <!-- El tipo de dato xs:gYear representa año gregoriano YYYY, aunque puede hacerse con xs:integer-->
+        <xs:restriction base="xs:gYear"> 
+            <xs:minInclusive value="1900"/>
+            <xs:maxInclusive value="2011"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tNombre">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <!-- \s Permite espacios en blanco, tabulaciones, etc.-->
+            <xs:pattern value="[A-Z]{1}[A-Z\sa-z]*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tCalle">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tCodPostal">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos Complejos -->
+    <xs:complexType name="tcExamen">
+        <xs:group ref="gExamen" />
+    </xs:complexType>
+
+    <xs:complexType name="tcPersona">
+        <xs:group ref="gPersona" />
+    </xs:complexType>
+
+    <xs:complexType name="tcDireccion">
+        <xs:group ref="gDireccion" />
+    </xs:complexType>
+
+    <xs:complexType name="tcNacimiento">
+        <xs:attribute name="dia" type="tDia" />
+        <xs:attribute name="mes" type="tMes" />
+        <xs:attribute name="anyo" type="tAnyo" />
+    </xs:complexType>
+
+    <!-- Grupos/Secuencias y sus elements -->
+    <xs:group name="gExamen">
+        <xs:sequence>
+            <xs:element name="persona" type="tcPersona" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gPersona">
+        <xs:sequence>
+            <xs:element name="nombre" type="tNombre" minOccurs="1" maxOccurs="1" />
+            <xs:element name="nacimiento" type="tcNacimiento" minOccurs="0" maxOccurs="1" />
+            <xs:element name="direccion" type="tcDireccion" minOccurs="1" maxOccurs="3" />
+            <xs:choice minOccurs="1" maxOccurs="1">
+                <xs:element name="varon" nillable="true" minOccurs="1" maxOccurs="1" />
+                <xs:element name="hembra" nillable="true" minOccurs="1" maxOccurs="1" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gDireccion">
+        <xs:sequence>
+            <xs:element name="calle" type="tCalle" minOccurs="1" maxOccurs="1" />
+            <xs:element name="poblacion" type="tNombre" minOccurs="1" maxOccurs="1" />
+            <xs:element name="provincia" type="tNombre" minOccurs="1" maxOccurs="1" />
+            <xs:element name="cpostal" type="tCodPostal" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

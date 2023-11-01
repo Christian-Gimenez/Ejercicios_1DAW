@@ -1,0 +1,18 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="primerEj" type="tcEj">
+    </xs:element>
+
+    <xs:complexType name="tcEj">
+        <xs:group ref="gEj"></xs:group>
+    </xs:complexType>
+
+    <xs:group name="gEj">
+        <xs:sequence>
+            <xs:element name="ciudad" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="fecha-de-nacimiento" type="xs:date" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="hora" type="xs:time" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="nota" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="apto" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

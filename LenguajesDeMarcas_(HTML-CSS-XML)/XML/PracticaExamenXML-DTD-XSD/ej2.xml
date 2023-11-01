@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE employees SYSTEM "ej2.dtd">-->
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="ej2.xsd">
+  <employee id="001">
+    <name>John Doe</name>
+    <age>30</age>
+    <department>Marketing</department>
+    <salary>50000</salary>
+  </employee>
+  <employee id="002">
+    <name>Jane Smith</name>
+    <age>35</age>
+    <department>Finance</department>
+    <salary>60000</salary>
+  </employee>
+</employees>

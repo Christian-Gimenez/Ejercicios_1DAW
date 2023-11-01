@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paises[
+  <!ELEMENT paises (pais*)>
+  <!ELEMENT pais (nombre*, continente, numero_hab, gobierno)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT continente ANY>
+  <!ELEMENT numero_hab (#PCDATA)>
+  <!ELEMENT gobierno EMPTY>
+]>
+<paises>
+  <pais>
+    <nombre></nombre>
+    <continente></continente>  
+    <numero_hab></numero_hab>
+    <gobierno/>
+  </pais>
+  
+  <pais>
+    <nombre></nombre>
+    <continente></continente>  
+    <numero_hab></numero_hab>
+    <gobierno/>
+  </pais>
+</paises>

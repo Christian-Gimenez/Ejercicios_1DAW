@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ejercicio1>
+  <!--1º -->
+  <ciudad>Pamplona</ciudad>
+
+  <!--2º -->
+  <ciudad>Pamplona</ciudad>
+  
+  <!--3º -->
+  <ciudad>Pamplona</ciudad>
+  <dia>18</dia>
+  <mes>6</mes>
+  <ciudad>Pamplona</ciudad>
+  <rojo>
+  <colores>Rojo y Naranja</colores> 
+  <Aficiones>Cine, Bailar, Nadar</Aficiones>
+  <persona>
+    <nombre>Elsa</nombre>
+  </persona>
+  <color_favorito>azul</color_favorito>
+
+  <!--4º -->
+  <condicion>a&lt;b</condicion>
+
+  <!--5º -->
+  <condicion>a&gt;b</condicion>
+
+  <!--6º -->
+  <condicion>a==1 &amp;&amp; b==2</condicion>
+
+  <!--7º -->
+  <dato caracter="comilla doble&quot;"/>
+
+  <!--8º -->
+  <dato caracter="comilla simple&apos;"/>
+</ejercicio1>

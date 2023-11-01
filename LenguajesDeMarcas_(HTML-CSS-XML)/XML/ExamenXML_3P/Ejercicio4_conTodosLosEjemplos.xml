@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--EXPLICACIÓN:
+    La definición del element CV indica que debe tener como elementos hijos
+    en el siguiente orden:
+    - 1 sólo elemento "presentación"
+    - 1 o más elementos "datos_academicos" O "experiencia_laboral"
+        (Eligiendo entre al menos 1 de ellos en cualquier orden, pueden ser ambos, uno de cada)
+    - 0 o más elementos "lectura" O "deportes" O "otros"
+        (Eligiendo alguno entre ellos en cualquier orden, pueden ser los 3, o 2, o solo 1)
+    - 0 o más elementos "referencia"
+ -->
+<!DOCTYPE examen [
+    <!ELEMENT examen (cv)*>
+        <!ELEMENT cv (presentacion, (datos_academicos | experiencia_laboral)+,
+        (lectura | deportes | otros)*, referencias*)>
+            <!ELEMENT presentacion (#PCDATA)>
+            <!ELEMENT datos_academicos (#PCDATA)>
+            <!ELEMENT experiencia_laboral (#PCDATA)>
+            <!ELEMENT lectura (#PCDATA)>
+            <!ELEMENT deportes (#PCDATA)>
+            <!ELEMENT otros (#PCDATA)>
+            <!ELEMENT referencias (#PCDATA)>
+]>
+<examen>
+    <cv><!-- Ejemplo 1: Elementos mínimos posibles-->
+        <presentacion>Luisiano, Electricista</presentacion>
+        <experiencia_laboral>Demasiada para contar, seguro que hasta instalé la luz de tu casa</experiencia_laboral>
+    </cv>
+
+    <cv><!-- Ejemplo 2: Todos los elementos posibles-->
+        <presentacion>Chuso, Autónomo manitas</presentacion>
+        <experiencia_laboral>Chapuzas de todo tipo, baños, cocinas, tapicerias, fachadas...</experiencia_laboral>
+        <datos_academicos>La Universidad de la calle</datos_academicos>
+        <otros>Me encanta el futbol, si hay partido no atiendo llamadas</otros>
+        <lectura>Del gas, del contador de luz... De lo que quieras</lectura>
+        <deportes>Football</deportes>
+        <referencias>Todos los vecinos del barrio</referencias>
+    </cv>
+
+    <cv><!-- Ejemplo extra 3: Eligiendo alguno de los elementos-->
+        <presentacion>Pepa, Programadora Senior</presentacion>
+        <datos_academicos>FP Superior DAW</datos_academicos>
+        <lectura>Me gustan los libros de filosofía y de acción.</lectura>
+        <referencias>http://miportfolio/pepa.com</referencias>
+    </cv>
+
+    <cv><!-- Ejemplo extra 4: Eligiendo otros elementos distintos-->
+        <presentacion>Juancha, Contable a tiempo completo</presentacion>
+        <experiencia_laboral>Inditex</experiencia_laboral>
+        <deportes>Waterpolo</deportes>
+        <otros>Me encanta contar cosas</otros>
+    </cv>
+
+
+</examen>

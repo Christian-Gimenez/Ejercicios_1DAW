@@ -1,0 +1,17 @@
+<!ELEMENT biblioteca (libro+, lector*)>
+    <!ELEMENT libro (titulo, autor, añoPublicacion, genero+)>
+        <!ATTLIST libro isbn CDATA #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT autor (#PCDATA)>
+        <!ELEMENT añoPublicacion (#PCDATA)>
+        <!ELEMENT genero (#PCDATA)>
+    <!ELEMENT lector (nombre, email, prestamo*)>
+        <!ATTLIST lector dni CDATA #REQUIRED>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT email ANY>
+        <!ELEMENT prestamo (ejemplar, fecha)>
+            <!ELEMENT ejemplar EMPTY>
+                <!ATTLIST ejemplar isbn CDATA #REQUIRED>
+            <!ELEMENT fecha EMPTY>
+                <!ATTLIST fecha inicio CDATA #REQUIRED>
+                <!ATTLIST fecha fin CDATA #IMPLIED>

@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="heladeria" type="tcHeladeria">
+    </xs:element>
+    
+    <!-- Tipos Simples-->
+    <xs:simpleType name="tSaborHelado">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos Complejos-->
+    <xs:complexType name="tcHeladeria">
+        <xs:group ref="gHeladeria"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcHelado">
+        <xs:group ref="gHelado"/>
+        <xs:attribute name="fabricación" type="xs:date"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gHeladeria">
+        <xs:sequence>
+            <xs:element name="helado" type="tcHelado" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gHelado">
+        <xs:sequence>
+            <xs:choice maxOccurs="1">
+                <xs:element name="chocolate" type="tSaborHelado" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="fresa" type="tSaborHelado" minOccurs="1" maxOccurs="1"/>
+            </xs:choice>
+            <xs:choice maxOccurs="1">
+                <xs:element name="turron" type="tSaborHelado" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="fresa" type="tSaborHelado" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="vainilla" type="tSaborHelado" minOccurs="1" maxOccurs="1"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

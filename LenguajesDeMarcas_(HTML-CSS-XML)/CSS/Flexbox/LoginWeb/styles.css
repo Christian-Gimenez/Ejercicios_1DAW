@@ -1,0 +1,106 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 725px;
+    background-image: linear-gradient(-45deg, #044743, #75083b);
+
+}
+
+.login-box, form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.login-box {
+    background-image: linear-gradient(-45deg, #006b63, #b31864);
+    height: 450px;
+    flex-basis: 450px;
+}
+
+form {
+    flex-basis: 95%;
+    height: 425px;
+    border: 3px solid gray;
+    background-image: linear-gradient(-45deg, #006b63, #c7377c);
+}
+
+input[type="email"], input[type="password"] {
+    margin: 25px 25px;
+    border-style: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.733);
+    background-color: transparent;
+    width: 320px;
+    padding: 15px;
+    padding-left: 5px;
+}
+
+input[type="email"]::placeholder, input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.733);
+    font-size: 25px;
+}
+
+.remember_forgot {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    margin-bottom: 40px;
+}
+
+.remember_forgot, .remember_forgot a {
+    color:rgba(240, 248, 255, 0.612);
+}
+
+.remember_forgot a {
+    text-decoration: none;
+    font-style: italic;
+
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-left: 20px;
+    background-color: #313131;
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: "✓";
+    
+
+}
+
+
+input[type="submit"] {
+    border-style: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: rgba(255, 255, 255, 0.466);
+    flex-basis: 50%;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #133F3B;
+}

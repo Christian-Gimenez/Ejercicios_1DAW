@@ -1,0 +1,25 @@
+.p-general {
+    font-family: Verdana;
+    line-height: 30px;
+    text-align: center;
+    
+}
+
+.p-especial {
+    color: yellow;
+    text-align: center;
+}
+
+#caja-exterior {
+    display: block;
+    width: 350px;
+    border: 1px dashed black;
+    align-content: center;
+}
+
+#caja-interior {
+    margin: 30px;
+    padding: 25px;
+    background-color: green;
+    border: 3px double orange;
+}

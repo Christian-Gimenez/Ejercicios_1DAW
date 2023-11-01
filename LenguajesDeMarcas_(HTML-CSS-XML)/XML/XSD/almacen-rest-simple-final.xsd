@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="almacen">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="responsable" />
+                <xs:element name="prod" minOccurs="1" maxOccurs="unbounded" type="tcProductos" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Seccion de definicion de tipos nuevos-->
+    <xs:simpleType name="tNombre">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tDecimal">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2" />
+            <xs:minExclusive value="0" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="enumCategoria">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Ebanisteria" />
+            <xs:enumeration value="Electricidad" />
+            <xs:enumeration value="Pintura" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tDescuento">
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="100"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tID">
+        <xs:restriction base="xs:string">
+            <xs:length value="4" />
+            <xs:pattern value="[A-Z][0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcProductos">
+        <xs:group ref="gProd"/>
+        <xs:attribute name="id" type="tID" />
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gProd">
+        <xs:sequence>
+            <xs:element name="nombre" type="tNombre" />
+            <xs:element name="precio" type="tDecimal" />
+            <xs:element name="categoria" type="enumCategoria" />
+            <xs:element name="descuento" type="tDescuento" />
+        </xs:sequence>
+    </xs:group>
+
+</xs:schema>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<factura numero="999">
+  <cliente>
+    <nombre>Equipos Digitales S.L.</nombre>
+    <direccion>Av. Valladolid</direccion>
+    <ciudad cp="28015">Madrid</ciudad>
+    <cif>Q-9876543</cif>
+    <telefono>91.777.66.88</telefono>
+  </cliente>
+
+</factura>

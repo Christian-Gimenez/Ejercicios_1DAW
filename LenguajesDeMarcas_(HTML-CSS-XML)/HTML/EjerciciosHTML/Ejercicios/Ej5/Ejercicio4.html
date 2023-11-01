@@ -1,0 +1,56 @@
+<<!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 4 formularios</title>
+    </head>
+
+    <body>
+        <h1>Productos Mexicanos de Limpieza "PROLIM"</h1>
+        <form action="" method="post">
+            <label for="producto1">Entrada (elija sólo una línea de productos):</label>
+            <br/>
+            <select name="producto1" id="producto1">
+                <optgroup label="Linea Productos">
+                    <option value="Ninguna">Ninguna</option>
+                    <option value="Cocina">Cocina</option>
+                    <option value="Lavandería">Lavandería</option>
+                    <option value="Hábitat">Hábitat</option>
+                    <option value="Albercas">Albercas</option>
+                    <option value="Industrial">Industrial</option>
+                </optgroup>
+            </select>
+            <br/><br/>
+
+            <label for="producto2">Segundo (puede elegir más de un producto):</label>
+            <br/>
+            <select name="producto2" id="producto2" multiple>
+                <optgrop label="Marca Producto">
+                    <option value="Ninguno">Ninguno</option>
+                    <option value="Tergen">Tergen (Detergente lavaloza neutro uso manual)</option>
+                    <option value="Spotless">Spotless (Detergente liquido para maquina lavaloza)</option>
+                    <option value="Track">Track (Pasta Multiusos)</option>
+                    <option value="Triton">Triton (Prelavador alcalino liquido)</option>
+                    <option value="DINAMO">DINAMO (Desengrasante Emulsificante )</option>
+                    <option value="Triton">Triton (Prelavador alcalino liquido)</option>
+                    <option value="Crystal">Crystal (Limpia vidrios)</option>
+                </optgrop>
+            </select>
+            <br/><br/>
+
+            <label for="producto3">La tercera lista desplegable tiene las siguientes opciones:</label>
+            <br/>
+            <select name="producto3" id="producto3">
+                <optgroup label="Producto de Cocina">
+                    <option value="Ninguno">Ninguno</option>
+                    <option value="Tergen">Tergen (Detergente lavaloza neutro uso manual)</option>
+                    <option value="Spotless">Spotless (Detergente liquido para maquina lavaloza)</option>
+                    <option value="Track">Track (Pasta Multiusos)</option>
+                    <option value="Triton">Triton (Prelavador alcalino liquido)</option>
+                </optgroup>
+            </select>
+        </form>
+    </body>
+
+    </html>

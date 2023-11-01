@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--elemento raiz-->
+    <xs:element name="libros">
+        <xs:complexType>
+            <xs:sequence>
+                <!--hijo de libros-->
+                <xs:element name="libro" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Secuencia de titulo, fecha, ref y precio-->
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="fechaPubli" type="xs:date"/>
+                            <xs:element name="ref" type="xs:string"/>
+
+                            <!--Atributo divisa-->
+                            <xs:element name="precio">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:decimal">
+                                            <xs:attribute name="divisa" type="xs:string" default="€" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                        <!-- Atributo disponible-->
+                        <xs:attribute name="disponible" type="xs:boolean" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

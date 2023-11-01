@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+
+    <ol type="1">
+        <li>Ejercicio 1 (Imágenes):</li>
+        <img src="Playa.png" />
+        <br />
+        &nbsp;&nbsp;&nbsp;<cite>Gracias a este examen, aprobaré y podré ir a esta playa :) <strong>¡Gracias!</strong>
+        </cite>
+        <br />
+        <br />
+        <li>Ejercicio 2 (Hiperenlaces):
+
+            <ol type="a">
+                <li>Página de deportes:</li>
+                <a href="https://as.com/"><img src="Imagen AS.png" /></a>
+                <br />
+                <li>Barra de herramientas de navegación:
+                    <ul type="circle">
+                        <li><a href="https://as.com/futbol/?omnil=mpal">Fútbol</a></li>
+                        <li><a href="https://as.com/motor/?omnil=mpal">Motor</a></li>
+                        <li><a href="https://as.com/tenis/?omnil=mpal">Tenis</a></li>
+                        <li><a href="https://as.com/ciclismo/?omnil=mpal">Ciclismo</a></li>
+                        <li><a href="https://as.com/masdeporte/?omnil=mpal">Más Deporte</a></li>
+                        <li><a href="https://as.com/actualidad/?omnil=mpal">Actualidad</a></li>
+                </li>
+                </ul>
+            </ol>
+        </li>
+        <br />
+        <li>Ejercicio 3 (Formulario)
+            <table>
+                <h4>Registro de usuario</h4>
+                <form action="#" method="POST" name="registro-usuario">
+                    <tr>
+                        <td> <label for="nombre">Nombre</label></td>
+                        <td colspan="2"> <input type="text" id="nombre" name="nombre" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="apellidos">Apellidos</label></td>
+                        <td colspan="2"><input type="text" id="apellidos" name="apellidos" /></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="1"><label for="genero">Género</label></td>
+                        <td>
+                            <label for="hombre">Hombre</label>
+                            <input type="radio" id="hombre" value="hombre" name="genero" />
+                            <br />
+                            <label for="mujer">Mujer</label>
+                            <input type="radio" id="mujer" value="mujer" name="genero" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="edad">Edad</label></td>
+                        <td colspan="2"><input type="number" id="edad" name="edad" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ocupacion">Ocupación</label></td>
+                        <td colspan="2">
+                            <select name="ocupacion" size="1">
+                                <option value="trabajador">Trabajador</option>
+                                <option value="estudiante">Estudiante</option>
+                                <option value="jubilado">Jubilado</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="comentarios">Comentarios</label></td>
+                        <td>
+                            <textarea placeholder="Escriba aquí sus comentarios" id="comentarios" name="comentarios"
+                                cols="15" rows="2"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Enviar" />
+                            <input type="reset" value="Borrar datos" />
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </li>
+
+
+    </ol>
+</body>
+
+</html>

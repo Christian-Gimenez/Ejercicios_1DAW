@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="alumno" type="tcAlumno">
+        
+
+    </xs:element>
+
+    <!-- Tipos simples-->
+    <xs:simpleType name="tDNI">
+        <xs:restriction base="xs:string">
+            <xs:length value="9"/>
+            <xs:pattern value="[0-9]{8}[A-Z]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tNumero">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxInclusive value="500"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcAlumno">
+        <xs:group ref="gAlumno"/>
+        <xs:attribute name="dni" type="tDNI" />
+    </xs:complexType>
+
+    <xs:complexType name="tcDireccion">
+        <xs:group ref="gDireccion"/>
+    </xs:complexType>
+
+    
+
+    <!-- Grupos/secuencias-->
+    <xs:group name="gAlumno">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="direccion" type="tcDireccion" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="telefono" type="xs:integer" minOccurs="0" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gDireccion">
+        <xs:sequence>
+            <xs:element name="calle" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="numero" type="tNumero" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="ciudad" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="provincia" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

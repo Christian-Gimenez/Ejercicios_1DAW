@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pedido> <!--Nodo raiz-->
+  <cliente>Juan Delgado Martínez</cliente>
+  <articulo>Bicicleta A2023</articulo>
+  <direccion>Calle Barco 4, 3ºA</direccion>
+  <fechaEntrega>19-5-2000</fechaEntrega>
+</pedido>

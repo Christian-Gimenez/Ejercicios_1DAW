@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 formularios</title>
+</head>
+
+<body>
+    <style>
+        h1,
+        input,
+        label {
+            font-family: verdana;
+        }
+    </style>
+    <form action="mailto: gimenezchristian.gb@gmail.com" method="post" name="ficha_de_datos">
+        <h1>Ficha de datos</h1>
+        <br />
+        <fieldset>
+            <table cellpadding="2px">
+
+                <legend>
+                    <font color="blue" face="verdana">Toma de datos</font>
+                </legend>
+
+                <tr>
+                    <td><label for="nombre">Nombre: </label></td>
+                    <td><input type="text" name="nombre" id="nombre" /></td>
+                </tr>
+                <tr>
+                    <td><label for="apellido1">Primer Apellido: </label></td>
+                    <td><input type="text" name="apellido1" id="apellido1" /></td>
+                </tr>
+                <tr>
+                    <td><label for="apellido2">Segundo Apellido: </label></td>
+                    <td><input type="text" name="apellido2" id="apellido2" /></td>
+                <tr>
+                <tr>
+                    <td><label for="domicilio">Domicilio: </label></td>
+                    <td><input size="40" type="text" name="domicilio" id="domicilio" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="genero">Sexo: </label>
+                    </td>
+                    <td>
+                        <label for="hombre">Hombre</label>
+                        <input type="radio" name="genero" id="hombre" value="hombre" />
+
+                        <label for="mujer">Mujer</label>
+                        <input type="radio" name="genero" id="mujer" value="mujer" />
+
+                        <label for="otro-no-binario">Otro/No-Binario</label>
+                        <input type="radio" name="genero" id="otro-no-binario" value="otro-no-binario" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pelicula">Película favorita: </label>
+                    </td>
+                    <td>
+                        <label for="terminator">Terminator: </label>
+                        <input type="checkbox" name="pelicula" id="terminator" value="terminator" />
+
+                        <label for="elbarcofantasma">&nbsp;&nbsp;&nbsp;El Barco Fantasma: </label>
+                        <input type="checkbox" name="pelicula" id="elbarcofantasma" value="elbarcofantasma" />
+
+                        <label for="robocop">&nbsp;&nbsp;&nbsp;Robocop: </label>
+                        <input type="checkbox" name="pelicula" id="robocop" value="robocop" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit"></input></td>
+                    <td><input type="reset"></input></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+
+</html>

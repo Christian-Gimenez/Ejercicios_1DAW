@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="heladeria2" type="tcHeladeria2">
+    </xs:element>
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcHeladeria2">
+        <xs:group ref="gHeladeria2"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcHelado">
+        <xs:group ref="gHelado"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gHeladeria2">
+        <xs:sequence>
+            <xs:element name="helado" type="tcHelado" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gHelado">
+        <xs:sequence>
+            <xs:choice maxOccurs="1">
+                <xs:element name="fresa" minOccurs="1" maxOccurs="1"  nillable="true"/>
+                <xs:element name="vainilla" minOccurs="1" maxOccurs="1"  nillable="true"/>
+            </xs:choice>
+            <xs:element name="chocolate" minOccurs="1" maxOccurs="1" nillable="true"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

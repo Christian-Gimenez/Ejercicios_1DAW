@@ -1,0 +1,101 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="biblioteca" type="tcBiblioteca">
+    </xs:element>
+
+    <!--Tipos Simples-->
+    <xs:simpleType name="tISBN">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}[A-Z]{1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tGenero">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Filosofía"/>
+            <xs:enumeration value="Psicología"/>
+            <xs:enumeration value="Ciencia"/>
+            <xs:enumeration value="Fantasía"/>
+            <xs:enumeration value="Ensayo"/>
+            <xs:enumeration value="Novela"/>
+            <xs:enumeration value="Historica"/>
+            <xs:enumeration value="Anime y Comic"/>
+            <xs:enumeration value="Documental"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tDNI">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]{1}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tEmail">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]*@[a-zA-Z]*.com"/>
+            <xs:pattern value="\w*@\w*.com"/>
+            <xs:pattern value="[a-zA-Z]*@[a-zA-Z]*.es"/>
+            <xs:pattern value="\w*@\w*.es"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Tipos Complejos-->
+    <xs:complexType name="tcBiblioteca">
+        <xs:group ref="gBiblioteca"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcLibro">
+        <xs:group ref="gLibro"/>
+        <xs:attribute name="isbn" type="tISBN" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcLector">
+        <xs:group ref="gLector"/>
+        <xs:attribute name="dni" type="tDNI" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcPrestamo">
+        <xs:group ref="gPrestamo"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcEjemplar">
+        <xs:attribute name="isbn" type="tISBN"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcFecha">
+        <xs:attribute name="inicio" type="xs:date" use="required"/>
+        <xs:attribute name="fin" type="xs:date" use="optional"/>
+    </xs:complexType>
+
+    <!--Grupos-->
+    <xs:group name="gBiblioteca">
+        <xs:sequence>
+            <xs:element name="libro" type="tcLibro" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="lector" type="tcLector" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gLibro">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="autor" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="añoPublicacion" type="xs:gYear" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="genero" type="tGenero" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gLector">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="email" type="tEmail" minOccurs="1" maxOccurs="3"/>
+            <xs:element name="prestamo" type="tcPrestamo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gPrestamo">
+        <xs:sequence>
+            <xs:element name="ejemplar" type="tcEjemplar" nillable="true" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="fecha" type="tcFecha" nillable="true" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+
+</xs:schema>

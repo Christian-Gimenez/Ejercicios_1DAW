@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="employees" type="tcEmployeeS">
+    </xs:element>
+
+    <!-- Tipos Simples-->
+    <xs:simpleType name="tID">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tSalary">
+        <xs:restriction base="xs:integer">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos Complejos-->
+    <xs:complexType name="tcEmployeeS">
+        <xs:group ref="gEmployeeS"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcEmployee">
+        <xs:group ref="gEmployee"/>
+        <xs:attribute name="id" type="tID"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gEmployeeS">
+        <xs:sequence>
+            <xs:element name="employee" type="tcEmployee" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gEmployee">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:positiveInteger"/>
+            <xs:element name="department" type="xs:string"/>
+            <xs:element name="salary" type="tSalary"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

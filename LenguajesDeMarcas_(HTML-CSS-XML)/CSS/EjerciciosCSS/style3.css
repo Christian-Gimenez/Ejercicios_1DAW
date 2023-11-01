@@ -1,0 +1,15 @@
+h1, h2, h3 {
+    color: white;
+}
+
+h1 {
+    background-color: blueviolet;
+}
+
+h2 {
+    background-color: teal;
+}
+
+h3 {
+    background-color:chocolate;
+}

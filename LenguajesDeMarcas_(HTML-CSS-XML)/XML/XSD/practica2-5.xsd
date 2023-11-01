@@ -1,0 +1,66 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="faq" type="tcFaq">
+    </xs:element>
+
+    <!-- Tipos simples-->
+    <xs:simpleType name="tVersion">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*[.][0-9]*"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Podria ser que tVersion sea xs:integer???
+    <xs:simpleType name="tVersion">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d+\.\d+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType> -->
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcFaq">
+        <xs:group ref="gFaq"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcInfo">
+        <xs:group ref="gInfo"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcPart">
+        <xs:group ref="gPart"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcQ">
+        <xs:group ref="gQ"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gFaq">
+        <xs:sequence>
+            <xs:element name="info" minOccurs="1" maxOccurs="1" type="tcInfo"/>
+            <xs:element name="part" minOccurs="1" maxOccurs="unbounded" type="tcPart"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gInfo">
+        <xs:sequence>
+            <xs:element name="titulo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="autor" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="email" minOccurs="0" maxOccurs="1" type="xs:string"/>
+            <xs:element name="version" minOccurs="0" maxOccurs="1" type="tVersion"/>
+            <xs:element name="fecha" minOccurs="0" maxOccurs="1" type="xs:date"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gPart">
+        <xs:sequence>
+            <xs:element name="q" type="tcQ" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gQ">
+        <xs:sequence>
+            <xs:element name="qtext" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="a" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

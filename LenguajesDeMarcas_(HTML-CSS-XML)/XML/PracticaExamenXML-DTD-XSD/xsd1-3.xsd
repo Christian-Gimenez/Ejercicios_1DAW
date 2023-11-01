@@ -1,0 +1,33 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="fichas" type="tcFichas">
+    </xs:element>
+
+    <xs:complexType name="tcFichas">
+        <xs:group ref="gFichas"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcFicha">
+        <xs:group ref="gFicha"/>
+        <xs:attribute name="numero" type="tNumero"/>
+    </xs:complexType>
+
+    <xs:simpleType name="tNumero">
+        <xs:restriction base="xs:integer">
+            <xs:minExclusive value="0"/>
+            <xs:maxExclusive value="131"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:group name="gFichas">
+        <xs:sequence>
+            <xs:element name="ficha" type="tcFicha" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gFicha">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="edad" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

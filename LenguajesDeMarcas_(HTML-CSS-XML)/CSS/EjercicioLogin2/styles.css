@@ -1,0 +1,166 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, #eb1c6f, #252c98);
+}
+
+.encabezado {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tarjeta {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-basis: 270px;
+    background-color: white;
+    box-shadow: 0px 0px 15px black;
+    border-radius: 10px;
+    height: 270px;
+    cursor: pointer;
+    color:#252532;
+}
+
+.tarjeta:hover {
+    box-shadow: 0px 0px 15px rgb(178, 0, 249);
+    color:#8a1ceb;
+}
+
+.imgTarjeta {
+    width: 100px;
+    margin-top: 30px;
+}
+
+.tarjeta h2 {
+    margin: 0px;
+    font-size: 18px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+}
+
+.tarjeta a {
+    color:#8a1ceb
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+    height: 1000px;
+    padding-top: 50px;
+    gap: 150px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    flex-basis: 30%;
+    margin-top: 4px;
+
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 450px;
+    background: none;
+    flex-grow: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid aliceblue;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: aliceblue;
+    padding-bottom: 10px;
+    
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(253, 253, 253, 0.604);
+}
+
+
+input[type="submit"] {
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #eb1c6f;
+    background-color: aliceblue;
+    border-radius: 100px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+}
+
+textarea {
+    height: 70px;
+    resize: none;
+}
+
+.contenedorContacto {
+    flex-basis: 30%;
+    display: flex;
+
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.logosContacto {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.contacto h1 {
+    font-weight:lighter;
+    font-size: 40px;
+    margin: 0px;
+}
+
+.contacto p:first-child {
+    font-style: bold;
+}
+
+.imgLogo{
+    width: 50px;
+}
+
+.franjaBlanca {
+    display: block;
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 200px;
+}

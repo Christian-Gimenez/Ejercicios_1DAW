@@ -1,0 +1,74 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="libreria" type="tcLibreria">
+    </xs:element>
+
+    <!-- Tipos simples-->
+    <xs:simpleType name="tCodigo">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1000"/>
+            <xs:maxInclusive value="9999"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tTelefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tFormato">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Rústica"/>
+            <xs:enumeration value="Tapa blanda"/>
+            <xs:enumeration value="Tapa dura"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tPrecio">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*[,][0-9]{1,2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Tipos complejos-->
+    <xs:complexType name="tcLibreria">
+        <xs:group ref="gLibreria"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcPropietario">
+        <xs:group ref="gPropietario"/>
+    </xs:complexType>
+
+    <xs:complexType name="tcLibro">
+        <xs:group ref="gLibro"/>
+    </xs:complexType>
+
+    <!-- Grupos-->
+    <xs:group name="gLibreria">
+        <xs:sequence>
+            <xs:element name="codigo" minOccurs="1" maxOccurs="1" type="tCodigo"/>
+            <xs:element name="direccion" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="telefono" minOccurs="1" maxOccurs="1" type="tTelefono"/>
+            <xs:element name="propietario" minOccurs="1" maxOccurs="1" type="tcPropietario"/>
+            <xs:element name="libro" minOccurs="1" maxOccurs="unbounded" type="tcLibro"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gPropietario">
+        <xs:sequence>
+            <xs:element name="nombre" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="telefono" minOccurs="0" maxOccurs="unbounded" type="tTelefono"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="gLibro">
+        <xs:sequence>
+            <xs:element name="titulo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="autor" minOccurs="1" maxOccurs="1" type="xs:string"/>
+            <xs:element name="formato" minOccurs="0" maxOccurs="1" type="tFormato"/>
+            <xs:element name="publicacion" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+            <xs:element name="precio" minOccurs="0" maxOccurs="1" type="tPrecio"/>
+            <xs:element name="cantidad" minOccurs="0" maxOccurs="1" type="xs:integer"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Práctica de formularios</title>
+</head>
+
+<body>
+  <form action="mailto:gimenezchristian.gb@gmail.com" method="post">
+    <label for="usuario">Escriba su usuario: </label>
+    <input type="text" id="usuario" name="usuario" size="10" maxlength="12" />
+    <br />
+
+    <label for="password">Contraseña: </label>
+    <input type="password" id="password" name="contraseña" size="10" maxlength="12" />
+    <br />
+
+    <label for="comentarios">Comentarios:</label><br />
+    <textarea name="comentarios" id="comentarios" rows="6" cols="40"></textarea>
+    <br />
+
+    <label for="contacto">¿Cómo contactó con nosotros?</h5>
+      <select name="contacto" id="contacto">
+        <option value="casualidad">Por casualidad</option>
+        <option value="periodico">Por el periódico</option>
+        <option value="buscadores">En los buscadores</option>
+        <option value="comentario">Me lo comentaron</option>
+      </select>
+      <br />
+
+      <label for="SO">¿Cuál es su sistema operativo preferido?</label>
+      <br />
+      <input type="radio" name="SistemaOperativo" id="SO" value="Windows">Windows
+      <input type="radio" name="SistemaOperativo" id="SO" value="Mac">Mac OS
+      <input type="radio" name="SistemaOperativo" id="SO" value="Linux" checked>Linux
+
+      <br/>
+      <input type="checkbox" id="check" name="Lista">
+      <label for="check">Sí, deseo recibir información acerca de sus productos.</label>
+      <br />
+      <p>
+        <input type="submit" value="Enviar datos">&nbsp;&nbsp;
+        <input type="reset" value="Borrar datos">
+      </p>
+  </form>
+
+</body>
+
+</html>

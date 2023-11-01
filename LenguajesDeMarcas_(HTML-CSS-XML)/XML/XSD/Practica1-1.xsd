@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ejercicio1">
+        <xs:complexType>
+            <xs:group ref="gEj1"/>
+        </xs:complexType>
+    </xs:element>
+<!-- Tipos simples-->
+
+<!-- Grupos-->
+<xs:group name="gEj1">
+    <xs:sequence>
+        <xs:element name="ciudad" type="xs:string"/>
+        <xs:element name="fecha-de-nacimiento" type="xs:date"/>
+        <xs:element name="hora" type="xs:time"/>
+        <xs:element name="nota" type="xs:decimal"/>
+        <xs:element name="apto" type="xs:boolean"/>
+    </xs:sequence>
+</xs:group>
+
+</xs:schema>

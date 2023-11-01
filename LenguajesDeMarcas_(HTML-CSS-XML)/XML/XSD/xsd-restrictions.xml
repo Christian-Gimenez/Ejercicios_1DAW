@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<almacen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="./almacen-rest00.xsd">
+    <responsable/>
+    <prod id="A001">
+        <nombre>Sierra</nombre>
+        <precio>23.95</precio>
+        <categoria>Ebanisteria</categoria>
+        <descuento>5</descuento>
+    </prod>
+
+    <prod id="B001">
+        <nombre>Led 5w</nombre>
+        <precio>6.95</precio>
+        <categoria>Electricidad</categoria>
+        <descuento>0</descuento>
+    </prod>
+
+</almacen>

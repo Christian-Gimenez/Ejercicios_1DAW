@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Formularios</title>
+    </head>
+    <body>
+        <form action="" method="post">
+            <fieldset>
+                <legend>Login</legend>
+                <label for="username">Usuario: </label>
+                <input type="text" id="username" name="username" placeholder="Pepe"/>
+                <br/><br/>
+                <label for="pass">Contraseña: </label>
+                <input type="password" id="pass" name="pass"/>
+            </fieldset>
+
+            <br/>
+
+            <fieldset>
+                <legend>Registrarse</legend>
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre" />
+                <br/>
+                <label for="apellidos">Apellidos: </label>
+                <input type="text" id="apellidos" name="apellidos"/>
+                <br/><br/>
+                <label>Género: </label><br/>
+                <label for=hombre>Hombre</label>
+                <input type="radio" name="genero" value="hombre"/>
+
+                <label for="mujer">Mujer</label>
+                <input type="radio" name="genero" value="mujer"/>
+
+                <label for="otro">Otro/No-Binario</label>
+                <input type="radio" name="genero" value="otro"/>
+
+                <br/><br/>
+
+                <label for="email">eMail: </label>
+                <input type="mail" id="email" name="email" />
+                <br/>
+                <label for="fecha">Fecha de Nacimiento</label>
+                <input type="date" id="fecha" name="fecha" />
+            </fieldset>
+
+            <br/>
+
+            <fieldset>
+                <input type="checkbox" name="notificaciones" id="notificaciones" />
+                <label for="notificaciones">Deseo recibir notificaciones por eMail de las novedades.</label>
+                <br/>
+                <input type="checkbox" name="condiciones" id="acepto" />
+                <label for="acepto">Acepto las condiciones de <a href="#">privacidad</a>.</label>
+                <br/>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpìar formulario</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

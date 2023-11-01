@@ -1,0 +1,26 @@
+body {
+    background-color:pink;
+}
+
+#container {
+    margin-left: 35%;
+    padding: 40px 40px 70px 40px;
+    border: 4px dashed green;
+    width: 500px;
+}
+
+#container h1 {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.mini-caja {
+    background-color: blue;
+    border: 3px solid springgreen;
+    margin: 1px;
+    padding: 0px;
+}
+
+.mini-caja p {
+    text-align: center;
+}

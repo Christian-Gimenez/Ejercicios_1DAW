@@ -1,0 +1,22 @@
+div {
+    background-color: yellow;
+    border: 3px solid blue;
+    padding: 10px;
+    margin: 20px;
+    padding-bottom: 50px;
+}
+
+p {
+    background-color: blue;
+    color:white;
+    border: 3px solid blue;
+    border-left-color: red;
+    border-right-color: red;
+}
+
+.naranja {
+    background-color: orange;
+    padding-top: 50px;
+    border: 5px dashed green;
+    padding-bottom: 20px;
+}
